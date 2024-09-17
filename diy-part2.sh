@@ -18,6 +18,7 @@ rm -rf feeds/packages/net/adguardhome
 rm -rf feeds/luci/themes/luci-theme-argon
 rm -rf feeds/luci/applications/luci-app-argon-config
 rm -rf feeds/luci/applications/luci-app-adbyby-plus
+rm -rf feeds/luci/applications/luci-app-netdata
 
 # Git稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
@@ -35,6 +36,8 @@ git clone --depth=1 -b main https://github.com/fw876/helloworld package/luci-app
 git_sparse_clone master https://github.com/vernesong/OpenClash luci-app-openclash
 git clone --depth=1 -b lede https://github.com/pymumu/luci-app-smartdns package/luci-app-smartdns
 git clone --depth=1 https://github.com/pymumu/openwrt-smartdns package/smartdns
+git clone --depth=1 https://github.com/sirpdboy/luci-app-netdata package/luci-app-netdata
+git clone --depth=1 https://github.com/sirpdboy/luci-app-ddns-go.git package/ddns-go
 
 # Themes
 git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
