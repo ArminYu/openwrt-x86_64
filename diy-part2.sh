@@ -46,7 +46,6 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci-s
 #sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
 #
 
-sudo apt install clang
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 
