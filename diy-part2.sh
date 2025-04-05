@@ -22,7 +22,7 @@ git clone --depth=1 -b master https://github.com/fw876/helloworld package/luci-a
 
 # Themes
 # git clone --depth=1 -b master https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
-# git clone --depth=1 -b master https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
+git clone --depth=1 -b master https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
 
 # Modify default theme（FROM uci-theme-bootstrap CHANGE TO luci-theme-argon）
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
