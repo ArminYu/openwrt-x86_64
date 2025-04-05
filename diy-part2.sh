@@ -12,13 +12,7 @@
 # ------------------------------- Main source started -------------------------------
 
 # 移除要替换的包
-rm -rf feeds/luci/themes/luci-theme-argon
-rm -rf feeds/luci/applications/luci-app-argon-config
-rm -rf feeds/luci/applications/luci-app-openvpn
-rm -rf feeds/luci/applications/luci-app-openvpn-server
-rm -rf feeds/packages/net/openvpn
-rm -rf feeds/packages/net/openvpn-easy-rsa
-
+# rm -rf feeds/luci/themes/luci-theme-argon
 
 
 # 添加额外插件
@@ -27,8 +21,8 @@ git clone --depth=1 -b master https://github.com/fw876/helloworld package/luci-a
 
 
 # Themes
-git clone --depth=1 -b master https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
-git clone --depth=1 -b master https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
+# git clone --depth=1 -b master https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
+# git clone --depth=1 -b master https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
 
 # Modify default theme（FROM uci-theme-bootstrap CHANGE TO luci-theme-argon）
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
