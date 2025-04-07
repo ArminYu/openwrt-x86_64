@@ -11,14 +11,15 @@
 
 # ------------------------------- Main source started -------------------------------
 
+# 更改默认 Shell 为 zsh
+sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
+
 # 移除要替换的包
 # rm -rf feeds/luci/themes/luci-theme-argon
 
 
 # 添加额外插件
 git clone --depth=1 -b master https://github.com/fw876/helloworld package/luci-app-ssr-plus
-
-
 
 # Themes
 # git clone --depth=1 -b master https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
