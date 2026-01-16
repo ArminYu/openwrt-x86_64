@@ -25,20 +25,19 @@ git clone --depth=1 -b master https://github.com/fw876/helloworld package/luci-a
 # git clone --depth=1 -b master https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
 git clone --depth=1 -b master https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
 
-# Modify default theme（FROM uci-theme-bootstrap CHANGE TO luci-theme-argon）
-sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
-sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci-light/Makefile
-sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci-nginx/Makefile
-sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci-ssl-nginx/Makefile
+#修改默认主题
+sed -i "s/luci-theme-bootstrap/luci-theme-argon/g" $(find ./feeds/luci/collections/ -type f -name "Makefile")
 
-# Modify default IP
-#sed -i 's/192.168.1.1/192.168.1.2/g' package/base-files/files/bin/config_generate
+# 修改默认IP
+sed -i 's/192.168.1.1/192.168.1.9/g' package/base-files/luci2/bin/config_generate
 
 # Modify default theme
 #sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
 # Modify hostname
 #sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
-#
+
+./scripts/feeds update -a
+./scripts/feeds install -a
 
 # ------------------------------- Main source ends -------------------------------
